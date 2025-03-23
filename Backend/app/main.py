@@ -46,29 +46,6 @@ async def websocket_endpoint(websocket: WebSocket, client_id: str):
     except WebSocketDisconnect:
         await ws_manager.disconnect(client_id)
 
-# Public endpoint for uploading video files
-# @app.post("/upload")
-# async def upload_video(request: Request, file: UploadFile = File(...)):
-#     # Get client ID from headers or cookies
-#     client_id = request.headers.get("x-client-id", "anonymous")
-    
-#     file_path = os.path.join(STORAGE_DIR, file.filename)
-#     async with aiofiles.open(file_path, 'wb') as out_file:
-#         content = await file.read()
-#         await out_file.write(content)
-    
-#     # Initialize processing status
-#     file_processing_status[file.filename] = {
-#         "enhanced": False,
-#         "metadata": False,
-#         "client_id": client_id
-#     }
-    
-#     # Publish a task to RabbitMQ
-#     publish_task({"filename": file.filename, "client_id": client_id})
-    
-#     return {"message": "File uploaded successfully", "filename": file.filename}
-
 
 @app.post("/upload")
 async def upload_video(request: Request, file: UploadFile = File(...)):
