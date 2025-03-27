@@ -11,7 +11,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["http://localhost:8000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -46,6 +46,10 @@ async def websocket_endpoint(websocket: WebSocket, client_id: str):
     except WebSocketDisconnect:
         await ws_manager.disconnect(client_id)
 
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
 
 @app.post("/upload")
 async def upload_video(request: Request, file: UploadFile = File(...)):

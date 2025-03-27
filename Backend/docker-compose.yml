@@ -5,11 +5,14 @@ services:
       - "8000:8000"
     environment:
       - RABBITMQ_HOST=rabbitmq
+      - PYTHONUNBUFFERED=1  # Add this to see Python logs immediately
+    volumes:
+      - ./logs:/usr/src/app/logs  # Mount logs directory
     depends_on:
       - rabbitmq
 
   rabbitmq:
     image: rabbitmq:3-management
     ports:
-      - "567:5672"
+      - "5672:5672"
       - "15672:15672"

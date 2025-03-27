@@ -7,6 +7,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+# Create logs directory
+RUN mkdir -p logs
+
 EXPOSE 8000
 
-CMD ["python3", "run.py"]
+# Use shell form to see logs
+CMD python run.py

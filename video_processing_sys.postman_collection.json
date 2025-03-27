@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "5f253bb3-3c2c-4d07-95b8-d50adb485315",
+		"name": "video_processing_sys",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34170231"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-client-id",
+						"value": "client123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/sample-5s.mp4"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-client-id",
+						"value": "client123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "///wsl.localhost/Ubuntu-22.04/home/ub2002/video_processing_sys/sample-5s.mp4"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

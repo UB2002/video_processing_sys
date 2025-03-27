@@ -5,6 +5,8 @@ import cv2
 import os
 import requests
 from app.config import STORAGE_DIR, RABBITMQ_HOST, EXCHANGE_NAME
+
+
 def enhance_video(filename):
     input_path = os.path.join(STORAGE_DIR, filename)
     output_path = os.path.join(STORAGE_DIR, f"enhanced_{filename}")
