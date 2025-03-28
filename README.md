@@ -12,8 +12,6 @@ This repository contains a video processing system with two main components:
 ```filetree
 Backend_assignment
 ├── Backend
-│   ├── docker-compose.yml   # (Work in progress)
-│   ├── Dockerfile           # (Work in progress)
 │   ├── requirements.txt
 │   ├── run.py
 │   ├── app
@@ -90,7 +88,7 @@ rabbitmq-plugins enable rabbitmq_management
 
 ### Docker (Work in Progress)
 
-Docker Compose files (`docker-compose.yml` and `Dockerfile`) have been added, but Docker deployment is still being finalized. If you prefer, you can run the backend locally using the instructions below.
+Docker Compose files (`docker-compose.yml` and `Dockerfile`) will be added, but Docker deployment is still being finalized. If you prefer, you can run the backend locally using the instructions below.
 
 ### Running the Backend Locally
 
